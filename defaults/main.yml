@@ -1,6 +1,7 @@
 nnn_users: []
 
 nnn_bms: 'r:/root'
+nnn_plug: ''
 
 nnn_profile_config_file: .bashrc
 
