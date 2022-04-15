@@ -1,0 +1,43 @@
+- name: Install EPEL
+  yum:
+    name: epel-release
+    state: present
+  when: ansible_os_family == "RedHat" and ansible_distribution_major_version >= "7"
+  tags:
+    - tinyops-nnn
+    - nnn
+
+- name: Install nnn
+  package:
+    name: nnn
+    state: present
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version != "6"
+  tags:
+    - tinyops-nnn
+    - nnn
+
+- import_tasks: centos6.yml
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version == "6"
+  tags:
+    - tinyops-nnn
+    - nnn
+
+- name: Add configuration for users
+  blockinfile:
+    path: "/home/{{ item }}/{{ nnn_profile_config_file }}"
+    block: "{{ lookup('template', 'bash.j2') }}"
+    marker: "# {mark} NNN CONFIG"
+  loop: "{{ nnn_users }}"
+  tags:
+    - tinyops-nnn
+    - nnn
+
+- name: Add configuration for root
+  blockinfile:
+    path: "/root/{{ nnn_profile_config_file }}"
+    block: "{{ lookup('template', 'bash.j2') }}"
+    marker: "# {mark} NNN CONFIG"
+  when: nnn_install_for_root
+  tags:
+    - tinyops-nnn
+    - nnn

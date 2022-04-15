@@ -1,0 +1,7 @@
+nnn_users: []
+
+nnn_bms: 'r:/root'
+
+nnn_profile_config_file: .bashrc
+
+nnn_install_for_root: False

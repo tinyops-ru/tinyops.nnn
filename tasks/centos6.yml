@@ -1,0 +1,9 @@
+- name: Install nnn (CentOS 6)
+  copy:
+    src: nnn
+    dest: /usr/bin/nnn
+    mode: 'a=rx'
+  tags:
+    - tinyops-nnn
+    - nnn
+
