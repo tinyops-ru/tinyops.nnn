@@ -1,6 +1,6 @@
 # Ansible role for nnn
 
-This is tiny ansible role for [nnn](https://github.com/jarun/nnn).
+Tiny ansible role for [nnn](https://github.com/jarun/nnn).
 
 ## Getting started
 
