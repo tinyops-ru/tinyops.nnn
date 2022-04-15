@@ -4,6 +4,8 @@ Tiny ansible role for [nnn](https://github.com/jarun/nnn).
 
 ## Getting started
 
+Define variables for your groups\hosts:
+
 ```yaml
 
 nnn_users: []
@@ -21,7 +23,7 @@ nnn_install_for_root: False
 
 ## CentOS 6
 
-Install static binary from role `files` dir.
+Role will install static binary from role `files` dir.
 
 ## TODO
 
