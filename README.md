@@ -21,7 +21,13 @@ nnn_profile_config_file: .bashrc
 nnn_install_for_root: False
 ```
 
-## CentOS 6
+## How it works
+
+Role use os package manager for install package `nnn`.
+
+Then adds to `.bash_profile` or `.bashrc` configuration.
+
+### CentOS 6
 
 Role will install static binary from role `files` dir.
 
